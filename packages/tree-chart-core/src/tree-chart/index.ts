@@ -59,9 +59,13 @@ export default class TreeChartCore {
     if (params.linkStyle) this.linkStyle = params.linkStyle
   }
 
-  init() {
+  init(enableDrag = true) {
     this.draw();
-    this.enableDrag();
+
+    if (enableDrag) {
+      this.enableDrag();
+    }
+
     this.initTransform();
   }
 

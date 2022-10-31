@@ -80,6 +80,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    dragEnabled: {
+      type: Boolean,
+      default: true,
+    },
     // 展示的层级数据, 样例数据如: hierachical.json
     dataset: {
       type: [Object, Array],
@@ -114,7 +118,7 @@ export default {
         collapseEnabled: this.collapseEnabled,
         linkStyle: this.linkStyle,
       });
-      this.treeChartCore.init();
+      this.treeChartCore.init(this.dragEnabled);
       this.nodeDataList = this.treeChartCore.getNodeDataList();
       this.initialTransformStyle =
         this.treeChartCore.getInitialTransformStyle();
